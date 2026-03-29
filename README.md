@@ -1,16 +1,41 @@
-# React + Vite
+# Weather App — Runner's Edition
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A real-time weather application built specifically for runners. Goes beyond standard weather apps with a smart **Running Conditions Score** and tools to help you plan the perfect training session.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Running Conditions Score (0–100)** — weighted algorithm across temperature (28%), wind (25%), precipitation (22%), humidity (20%), and UV index (5%)
+- **Best Run Window** — finds the optimal time slot in the next 24 hours for running
+- **Best Run Day** — recommends the best day across the 7-day forecast
+- **Gear Recommendations** — suggests what to wear based on current conditions
+- **Air Quality Monitoring** — AQI levels with visual indicators and pollen forecast
+- **Hourly & 7-Day Forecasts** — full weather breakdown with feels-like, dew point, pressure, cloud cover
+- **Moon Phase & Visibility** — for those early morning or evening runs
+- **Saved Locations** — save up to 5 favourite spots for quick switching
+- **Dynamic Theming** — background changes based on weather conditions and time of day
+- **Auto-refresh** — silently updates every 15 minutes
 
-## React Compiler
+## Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React 19** + **Vite**
+- **Open-Meteo API** — weather, hourly forecasts, air quality (free, no API key needed)
+- **OpenStreetMap Nominatim** — geocoding and reverse geocoding
+- **Geolocation API** — detect current location
+- **localStorage** — persist saved locations
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev
+```
+
+No API keys required — Open-Meteo is completely free and open.
+
+## Build
+
+```bash
+npm run build
+```
+
+The app is configured with a `/weather-app/` base path for subdirectory hosting.
